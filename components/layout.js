@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import Link from 'next/Link'
+// import Link from 'next/link'
 import utilStyles from '../styles/utils.module.css'
 import styles from './layout.module.css'
 
@@ -41,7 +41,7 @@ export default function Layout({ children, home }) {
           </>
         ) : (
           <>
-            <Link href='/'>
+            
               <a>
                 <Image 
                   priority
@@ -52,11 +52,10 @@ export default function Layout({ children, home }) {
                   alt={name}
                 />
               </a>
-            </Link>
             <h2 className={utilStyles.headingLg}>
-              <Link href='/'>
+              {/* <Link href='/'> */}
                 <a className={utilStyles.colorInherit}>{name}</a>
-              </Link>
+              {/* </Link> */}
             </h2>
           </>
         )}
@@ -64,9 +63,7 @@ export default function Layout({ children, home }) {
       <main>{children}</main>
       {!home && (
         <div className={styles.backToHome}>
-          <Link href='/'>
             <a>← Back To Home</a>
-          </Link>
         </div>
       )}
     </div>
